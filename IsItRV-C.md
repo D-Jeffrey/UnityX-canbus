@@ -73,7 +73,7 @@ For simple network structures, CANopen supports a predefined allocation of messa
 Okay, it is forsure not RV-C.  It is CANOpen
 
 let try 
-- [candump](https://manpages.debian.org/testing/can-utils/candump.1.en.html))
+- [candump](https://manpages.debian.org/testing/can-utils/candump.1.en.html)
 - https://github.com/oresat/CANopen-monitor#readme
 
 `candump -td -l`
@@ -104,9 +104,10 @@ no internal events logged
 ```
 
 
+# Moving on to CanOpen
+[We are done here](itisCanOpen-custom.md)
 
-
-
+---
 
 ---
 # Appendix
