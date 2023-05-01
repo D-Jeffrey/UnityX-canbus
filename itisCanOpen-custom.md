@@ -29,6 +29,7 @@ Type | Meaning?
 1 | Status
 
 Command | Meaning?
+--- | ---
 1 | Status
 2 | Set state
 3 | Acknowledge?
