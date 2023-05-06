@@ -1,0 +1,88 @@
+  secs   bits   from            type-         what To             cmd-             Data
+-------- -----  --------------- -----------   -- ---------------  ----------       ------------
+   0.000 00000  Panel           2-what        01  Outside Lights  1-stat           002B 
+   0.302 00000  Outside Lights  2-what        11  Bus             1-stat           002B0D84E4 
+   0.385 00000  Awning          0---                                               00 
+   0.742 00000  Ceiling Lights  0---                                               02140000001B3004 
+   0.764 00000  Awning          0---                                               00000000 
+   0.799 00000  Ceiling Lights  0---                                               00A32C0A00444200 
+   1.010 00000  Panel           2-what        01  Outside Lights  1-stat           002B 
+   1.386 00000  Awning          0---                                               00 
+   1.742 00000  Ceiling Lights  0---                                               02140000001B3004 
+   1.764 00000  Awning          0---                                               00000000 
+   1.798 00000  Ceiling Lights  0---                                               00A32C0A00444200 
+   1.802 00000  Outside Lights  2-what        11  Bus             1-stat           002B0D7F44 
+   2.020 00000  Panel           2-what        01  Outside Lights  1-stat           002B 
+   2.387 00000  Awning          0---                                               00 
+   2.742 00000  Ceiling Lights  0---                                               02140000001B3004 
+   2.764 00000  Awning          0---                                               00000000 
+   2.799 00000  Ceiling Lights  0---                                               00A32C0A00444200 
+   3.030 00000  Panel           2-what        01  Outside Lights  1-stat           002B 
+   3.302 00000  Outside Lights  2-what        11  Bus             1-stat           002B0D8148 
+   3.389 00000  Awning          0---                                               00 
+   3.742 00000  Ceiling Lights  0---                                               02140000001B3004 
+   3.764 00000  Awning          0---                                               00000000 
+   3.798 00000  Ceiling Lights  0---                                               00A32C0A00444200 
+   4.040 00000  Panel           2-what        01  Outside Lights  1-stat           002B 
+   4.390 00000  Awning          0---                                               00 
+   4.742 00000  Ceiling Lights  0---                                               02140000001B3004 
+   4.764 00000  Awning          0---                                               00000000 
+   4.799 00000  Ceiling Lights  0---                                               00A32C0A00444200 
+   4.802 00000  Outside Lights  2-what        11  Bus             1-stat           002B0D7B80 
+   5.050 00000  Panel           2-what        01  Outside Lights  1-stat           002B 
+   5.391 00000  Awning          0---                                               00 
+   5.742 00000  Ceiling Lights  0---                                               02140000001B3004 
+   5.764 00000  Awning          0---                                               00000000 
+   5.798 00000  Ceiling Lights  0---                                               00A32C0A00444200 
+   6.060 00000  Panel           2-what        01  Outside Lights  1-stat           002B 
+   6.302 00000  Outside Lights  2-what        11  Bus             1-stat           002B0D827C 
+   6.392 00000  Awning          0---                                               00 
+   6.742 00000  Ceiling Lights  0---                                               02140000001B3004 
+   6.764 00000  Awning          0---                                               00000000 
+   6.799 00000  Ceiling Lights  0---                                               00A32C0A00444200 
+   7.070 00000  Panel           2-what        01  Outside Lights  1-stat           002B 
+   7.742 00000  Ceiling Lights  0---                                               02140000001B3004 
+   7.764 00000  Awning          0---                                               00000000 
+   7.798 00000  Ceiling Lights  0---                                               00A32C0A00444200 
+   7.802 00000  Outside Lights  2-what        11  Bus             1-stat           002B0D7CFE 
+   8.062 00000  Outside Lights  0---          10  Controller      2-what           5500 
+   8.064 00000  Outside Lights  0---          10  Controller      2-what           5500 
+   8.066 00000  Outside Lights  2-what        10  Controller      2-what           5500 
+   8.067 00000  Outside Lights  0---          10  Controller      2-what           AA09 
+   8.069 00000  Outside Lights  0---          10  Controller      2-what           AA09 
+   8.071 00000  Panel           2-what        04  Ceiling Lights  2-what           0004 
+   8.071 00000  Outside Lights  2-what        10  Controller      2-what           AA09 
+   8.072 00000  Panel           2-what        04  Ceiling Lights  3-Answer         0004479C7E81 
+   8.080 00000  Panel           2-what        01  Outside Lights  1-stat           002B 
+   8.080 00000  Panel           3-Answer      00  Ceiling Lights  1-stat            
+   8.394 00000  Awning          0---                                               00 
+   8.580 00000  Panel           2-what        04  Ceiling Lights  4-SET            0004 
+   8.742 00000  Ceiling Lights  0---                                               02140000001B3004 
+   8.764 00000  Awning          0---                                               00000000 
+   8.799 00000  Ceiling Lights  0---                                               00A32C0A00444200 
+   9.090 00000  Panel           2-what        01  Outside Lights  1-stat           002B 
+   9.090 00000  Panel           2-what        04  Ceiling Lights  5-DONE?          0004 
+   9.302 00000  Outside Lights  2-what        11  Bus             1-stat           002B0D7549 
+   9.390 00000  Panel           2-what        04  Ceiling Lights  2-what           0004 
+   9.391 00000  Panel           2-what        04  Ceiling Lights  3-Answer         0004C8FEBAB3 
+   9.395 00000  Awning          0---                                               00 
+   9.400 00000  Panel           3-Answer      00  Ceiling Lights  0---              
+   9.742 00000  Ceiling Lights  0---                                               02140000001B3004 
+   9.764 00000  Awning          0---                                               00000000 
+   9.798 00000  Ceiling Lights  0---                                               00A32C0A00444200 
+   9.900 00000  Panel           2-what        04  Ceiling Lights  4-SET            0004 
+  10.396 00000  Awning          0---                                               00 
+  10.410 00000  Panel           2-what        04  Ceiling Lights  5-DONE?          0004 
+  10.742 00000  Ceiling Lights  0---                                               02140000001B3004 
+  10.764 00000  Awning          0---                                               00000000 
+  10.798 00000  Ceiling Lights  0---                                               00A32C0A00444200 
+  10.802 00000  Outside Lights  2-what        11  Bus             1-stat           002B0D7CBC 
+  11.110 00000  Panel           2-what        01  Outside Lights  1-stat           002B 
+  11.397 00000  Awning          0---                                               00 
+  11.742 00000  Ceiling Lights  0---                                               02140000001B3004 
+  11.764 00000  Awning          0---                                               00000000 
+  11.798 00000  Ceiling Lights  0---                                               00A32C0A00444200 
+  12.120 00000  Panel           2-what        01  Outside Lights  1-stat           002B 
+  12.302 00000  Outside Lights  2-what        11  Bus             1-stat           002B0D83B8 
+ - - - - - - - - - - - - - - - - - - - - - - - - -Summary (instances) - - - - - - - - - - - - - - - - - - - - - - - - -
+00 Bus                 01 Panel               0B Outside Lights      0D Ceiling Lights      0F Water Pump          10 Controller          1C Awning              

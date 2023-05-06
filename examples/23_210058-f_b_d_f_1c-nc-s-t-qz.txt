@@ -1,0 +1,178 @@
+  secs   bits   from            type-         what To             cmd-             Data
+-------- -----  --------------- -----------   -- ---------------  ----------       ------------
+   0.000 00000  BTController?   2-what        01  Outside Lights  1-stat           002B 
+   0.302 00000  Outside Lights  2-what        11  Bus             1-stat           002B0D84E4 
+   0.742 00000  Ceiling Lights  0---                                               02140000001B3004 
+   0.799 00000  Ceiling Lights  0---                                               00A32C0A00444200 
+   1.010 00000  BTController?   2-what        01  Outside Lights  1-stat           002B 
+   1.742 00000  Ceiling Lights  0---                                               02140000001B3004 
+   1.798 00000  Ceiling Lights  0---                                               00A32C0A00444200 
+   1.802 00000  Outside Lights  2-what        11  Bus             1-stat           002B0D7F44 
+   2.020 00000  BTController?   2-what        01  Outside Lights  1-stat           002B 
+   2.742 00000  Ceiling Lights  0---                                               02140000001B3004 
+   2.799 00000  Ceiling Lights  0---                                               00A32C0A00444200 
+   3.030 00000  BTController?   2-what        01  Outside Lights  1-stat           002B 
+   3.302 00000  Outside Lights  2-what        11  Bus             1-stat           002B0D8148 
+   3.742 00000  Ceiling Lights  0---                                               02140000001B3004 
+   3.798 00000  Ceiling Lights  0---                                               00A32C0A00444200 
+   4.040 00000  BTController?   2-what        01  Outside Lights  1-stat           002B 
+   4.742 00000  Ceiling Lights  0---                                               02140000001B3004 
+   4.799 00000  Ceiling Lights  0---                                               00A32C0A00444200 
+   4.802 00000  Outside Lights  2-what        11  Bus             1-stat           002B0D7B80 
+   5.050 00000  BTController?   2-what        01  Outside Lights  1-stat           002B 
+   5.742 00000  Ceiling Lights  0---                                               02140000001B3004 
+   5.798 00000  Ceiling Lights  0---                                               00A32C0A00444200 
+   6.060 00000  BTController?   2-what        01  Outside Lights  1-stat           002B 
+   6.302 00000  Outside Lights  2-what        11  Bus             1-stat           002B0D827C 
+   6.742 00000  Ceiling Lights  0---                                               02140000001B3004 
+   6.799 00000  Ceiling Lights  0---                                               00A32C0A00444200 
+   7.070 00000  BTController?   2-what        01  Outside Lights  1-stat           002B 
+   7.742 00000  Ceiling Lights  0---                                               02140000001B3004 
+   7.798 00000  Ceiling Lights  0---                                               00A32C0A00444200 
+   7.802 00000  Outside Lights  2-what        11  Bus             1-stat           002B0D7CFE 
+   8.062 00000  Outside Lights  0---          10  Controller      2-what           5500 
+   8.064 00000  Outside Lights  0---          10  Controller      2-what           5500 
+   8.066 00000  Outside Lights  2-what        10  Controller      2-what           5500 
+   8.067 00000  Outside Lights  0---          10  Controller      2-what           AA09 
+   8.069 00000  Outside Lights  0---          10  Controller      2-what           AA09 
+   8.071 00000  BTController?   2-what        04  Ceiling Lights  2-what           0004 
+   8.071 00000  Outside Lights  2-what        10  Controller      2-what           AA09 
+   8.072 00000  BTController?   2-what        04  Ceiling Lights  3-Answer         0004479C7E81 
+   8.080 00000  BTController?   2-what        01  Outside Lights  1-stat           002B 
+   8.580 00000  BTController?   2-what        04  Ceiling Lights  4-SET            0004 
+   8.742 00000  Ceiling Lights  0---                                               02140000001B3004 
+   8.799 00000  Ceiling Lights  0---                                               00A32C0A00444200 
+   9.090 00000  BTController?   2-what        01  Outside Lights  1-stat           002B 
+   9.090 00000  BTController?   2-what        04  Ceiling Lights  5-DONE?          0004 
+   9.302 00000  Outside Lights  2-what        11  Bus             1-stat           002B0D7549 
+   9.390 00000  BTController?   2-what        04  Ceiling Lights  2-what           0004 
+   9.391 00000  BTController?   2-what        04  Ceiling Lights  3-Answer         0004C8FEBAB3 
+   9.742 00000  Ceiling Lights  0---                                               02140000001B3004 
+   9.798 00000  Ceiling Lights  0---                                               00A32C0A00444200 
+   9.900 00000  BTController?   2-what        04  Ceiling Lights  4-SET            0004 
+  10.410 00000  BTController?   2-what        04  Ceiling Lights  5-DONE?          0004 
+  10.742 00000  Ceiling Lights  0---                                               02140000001B3004 
+  10.798 00000  Ceiling Lights  0---                                               00A32C0A00444200 
+  10.802 00000  Outside Lights  2-what        11  Bus             1-stat           002B0D7CBC 
+  11.110 00000  BTController?   2-what        01  Outside Lights  1-stat           002B 
+  11.742 00000  Ceiling Lights  0---                                               02140000001B3004 
+  11.798 00000  Ceiling Lights  0---                                               00A32C0A00444200 
+  12.120 00000  BTController?   2-what        01  Outside Lights  1-stat           002B 
+  12.302 00000  Outside Lights  2-what        11  Bus             1-stat           002B0D83B8 
+ -*- -*- -*- -*- -*- -*- -*- -*- -*- -*- -*- -*- -*-Table dump (number of instances):  -*- -*- -*- -*- -*- -*- -*- -*- -*- -*- -*- -*- -*-
+ 0004 01:BTController? (6)  0D:Ceiling Lights (6)  10:Controller (2)  1A:?unknown 1A (2)  
+ 000400 10:Controller (2)  1A:?unknown 1A (2)  
+ 0004479C7E81 01:BTController? (1)  0D:Ceiling Lights (1)  
+ 0004C8FEBAB3 01:BTController? (1)  0D:Ceiling Lights (1)  
+ 0004D5D8B24F 10:Controller (1)  1A:?unknown 1A (1)  
+ 0004EFCA8C49 10:Controller (1)  1A:?unknown 1A (1)  
+ 00092B7CFFFF0000 10:Controller (1)  
+ 00092B7DFFFF0000 10:Controller (1)  
+ 00092B7EFFFF0000 10:Controller (1)  
+ 00092B7FFFFF0000 10:Controller (1)  
+ 00092B80FFFF0000 10:Controller (1)  
+ 00092B81FFFF0000 10:Controller (1)  
+ 00092B82FFFF0000 10:Controller (1)  
+ 00092B84FFFF0000 10:Controller (1)  
+ 00092B85FFFF0000 10:Controller (1)  
+ 00092B86FFFF0000 10:Controller (1)  
+ 00092B87FFFF0000 10:Controller (1)  
+ 00140000001AE876 08:?unknown 08 (12)  
+ 00180000001B2EAD 00:Bus (11)  
+ 002B 00:Bus (9)  01:BTController? (12)  05:Bus (9)  0B:Outside Lights (12)  
+ 002B0D7549 00:Bus (1)  0B:Outside Lights (1)  
+ 002B0D7600 10:Controller (1)  17:?unknown 17 (1)  
+ 002B0D7B80 00:Bus (1)  0B:Outside Lights (1)  
+ 002B0D7CBC 00:Bus (1)  0B:Outside Lights (1)  
+ 002B0D7CFE 00:Bus (1)  0B:Outside Lights (1)  
+ 002B0D7E32 10:Controller (1)  17:?unknown 17 (1)  
+ 002B0D7E96 10:Controller (1)  17:?unknown 17 (1)  
+ 002B0D7F44 00:Bus (1)  0B:Outside Lights (1)  
+ 002B0D7FF3 10:Controller (1)  17:?unknown 17 (1)  
+ 002B0D8036 10:Controller (1)  17:?unknown 17 (1)  
+ 002B0D80A2 10:Controller (1)  17:?unknown 17 (1)  
+ 002B0D8130 10:Controller (1)  17:?unknown 17 (1)  
+ 002B0D8148 00:Bus (1)  0B:Outside Lights (1)  10:Controller (1)  17:?unknown 17 (1)  
+ 002B0D8169 10:Controller (1)  17:?unknown 17 (1)  
+ 002B0D81A4 10:Controller (1)  17:?unknown 17 (1)  
+ 002B0D827C 00:Bus (1)  0B:Outside Lights (1)  
+ 002B0D8355 10:Controller (1)  17:?unknown 17 (1)  
+ 002B0D83B8 00:Bus (1)  0B:Outside Lights (1)  
+ 002B0D83C0 10:Controller (1)  17:?unknown 17 (1)  
+ 002B0D84E4 00:Bus (1)  0B:Outside Lights (1)  
+ 0040 10:Controller (12)  
+ 00A2852B00441201 08:?unknown 08 (12)  
+ 00A32C0A00431000 0C:?unknown 0C (12)  
+ 00A32C0A00443100 03:Panel (12)  
+ 00A32C0A00444200 0D:Ceiling Lights (12)  
+ 00A32C0A00452000 0A:?unknown 0A (12)  
+ 00A32C1E00033019 02:?unknown 02 (12)  
+ 00A32C1E00044011 04:?unknown 04 (12)  
+ 00A32C1E00055019 07:?unknown 07 (12)  
+ 00A32C1E003D1011 06:?unknown 06 (12)  
+ 00A32C1E008F2011 05:Bus (12)  
+ 00A32C2100002011 06:?unknown 06 (12)  
+ 00A32C2100603111 0A:?unknown 0A (12)  
+ 00A32C2100604211 01:BTController? (12)  
+ 00A32C2100691011 0E:?unknown 0E (12)  
+ 00A32C2700000E00 02:?unknown 02 (12)  
+ 00B8012400000100 00:Bus (11)  
+ 02140000001B3004 01:BTController? (12)  02:?unknown 02 (24)  03:Panel (12)  04:?unknown 04 (12)  05:Bus (12)  06:?unknown 06 (22)  07:?unknown 07 (12)  0A:?unknown 0A (24)  0C:?unknown 0C (12)  0D:Ceiling Lights (12)  0E:?unknown 0E (12)  
+ 06140000001B3004 06:?unknown 06 (2)  
+ 55 00:Bus (1)  01:BTController? (1)  
+ 5500 01:BTController? (1)  06:?unknown 06 (1)  08:?unknown 08 (1)  0B:Outside Lights (3)  0C:?unknown 0C (1)  10:Controller (16)  12:?unknown 12 (1)  14:?unknown 14 (1)  17:?unknown 17 (1)  18:?unknown 18 (1)  19:?unknown 19 (1)  1A:?unknown 1A (1)  1F:?unknown 1F (1)  
+ 80FF00010000 12:?unknown 12 (12)  14:?unknown 14 (12)  15:?unknown 15 (11)  16:?unknown 16 (12)  
+ 80FF00020000 16:?unknown 16 (1)  
+ 80FF00030000 16:?unknown 16 (1)  
+ 80FF00070000 16:?unknown 16 (1)  
+ 80FF00090000 16:?unknown 16 (1)  
+ 80FF000D0000 16:?unknown 16 (1)  
+ 80FF00110000 16:?unknown 16 (1)  
+ 80FF00180000 16:?unknown 16 (1)  
+ 80FF00220000 16:?unknown 16 (1)  17:?unknown 17 (1)  
+ 80FF00230000 17:?unknown 17 (1)  
+ 80FF00240000 17:?unknown 17 (3)  
+ 80FF00250000 17:?unknown 17 (3)  
+ 80FF00260000 17:?unknown 17 (4)  
+ 80FF00270000 17:?unknown 17 (3)  
+ 80FF00280000 17:?unknown 17 (9)  
+ 80FF00290000 17:?unknown 17 (10)  
+ 80FF002E0000 16:?unknown 16 (1)  
+ 80FF003F0000 16:?unknown 16 (1)  
+ 80FF00560000 16:?unknown 16 (1)  
+ 80FF007A0000 16:?unknown 16 (1)  
+ 80FF00A70000 16:?unknown 16 (1)  
+ 80FF00E60000 16:?unknown 16 (1)  
+ 80FF013A0000 16:?unknown 16 (1)  
+ 80FF01880000 16:?unknown 16 (1)  
+ 81FF00010000 16:?unknown 16 (1)  
+ 81FF004F0000 16:?unknown 16 (1)  
+ 81FF00A30000 16:?unknown 16 (1)  
+ 81FF00E60000 16:?unknown 16 (1)  
+ 81FF01320000 16:?unknown 16 (1)  
+ 81FF01490000 16:?unknown 16 (1)  
+ 81FF015A0000 16:?unknown 16 (1)  
+ 81FF01680000 16:?unknown 16 (1)  
+ 81FF01700000 16:?unknown 16 (1)  
+ 81FF01770000 16:?unknown 16 (1)  
+ 81FF017B0000 16:?unknown 16 (1)  
+ 81FF017F0000 16:?unknown 16 (1)  
+ 81FF01820000 16:?unknown 16 (1)  
+ 81FF01840000 16:?unknown 16 (1)  
+ 81FF01850000 16:?unknown 16 (1)  
+ 81FF01860000 16:?unknown 16 (1)  
+ 81FF01870000 16:?unknown 16 (1)  
+ 81FF01880000 16:?unknown 16 (1)  
+ AA 00:Bus (1)  01:BTController? (1)  
+ AA00 01:BTController? (1)  10:Controller (2)  18:?unknown 18 (1)  
+ AA09 06:?unknown 06 (1)  08:?unknown 08 (1)  0B:Outside Lights (3)  0C:?unknown 0C (1)  10:Controller (14)  12:?unknown 12 (1)  14:?unknown 14 (1)  17:?unknown 17 (1)  19:?unknown 19 (1)  1A:?unknown 1A (1)  1F:?unknown 1F (1)  
+ C0FF00000000 11:?unknown 11 (13)  16:?unknown 16 (12)  1A:?unknown 1A (13)  1E:?unknown 1E (12)  
+ - - - - - - - - - - - - - - - - - - - - - - - - -Summary (instances) - - - - - - - - - - - - - - - - - - - - - - - - -
+00 Bus             ( 42    )      01 BTController?   ( 48    )      02 ?unknown 02     ( 48    )      03 Panel           ( 24    )      
+04 ?unknown 04     ( 24    )      05 Bus             ( 33    )      06 ?unknown 06     ( 50    )      07 ?unknown 07     ( 24    )      
+08 ?unknown 08     ( 26    )      0A ?unknown 0A     ( 48    )      0B Outside Lights  ( 27    )      0C ?unknown 0C     ( 26    )      
+0D Ceiling Lights  ( 32    )      0E ?unknown 0E     ( 24    )      0F Water Pump      ( 0     )      10 Controller      ( 73    )      
+11 ?unknown 11     ( 13    )      12 ?unknown 12     ( 14    )      14 ?unknown 14     ( 14    )      15 ?unknown 15     ( 11    )      
+16 ?unknown 16     ( 58    )      17 ?unknown 17     ( 48    )      18 ?unknown 18     ( 2     )      19 ?unknown 19     ( 2     )      
+1A ?unknown 1A     ( 21    )      1C Awning          ( 0     )      1E ?unknown 1E     ( 12    )      1F ?unknown 1F     ( 2     )      
+
