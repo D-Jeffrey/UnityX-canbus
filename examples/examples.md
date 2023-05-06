@@ -28,16 +28,16 @@ optional arguments:
 What does the output look like
 
 Straight output
-[python3 ..\UnityX\parse-x180T-candump.py -i candump-2023-04-23_210058.log](23_210058.txt)
+`[python3 ..\UnityX\parse-x180T-candump.py -i candump-2023-04-23_210058.log](23_210058.txt)`
 
 Let's look only at the commands which are broadcast to the bus, ignore all the no data ones, and ignore incrementation data, show a table of data and summaries the different devices which talked and counts of those device interactions, drop the change 
-[python3 ..\UnityX\parse-x180T-candump.py -i candump-2023-04-23_210058.log -f  0 -s -t -nc -qz -qi ](23_210058-f_0-nc-s-t-qz-qi.txt)
+`[python3 ..\UnityX\parse-x180T-candump.py -i candump-2023-04-23_210058.log -f  0 -s -t -nc -qz -qi ](23_210058-f_0-nc-s-t-qz-qi.txt)`
 
 Let's look at the known devices, no change informaiton, no zero data, summary of data summary of devices
-[python3 ..\UnityX\parse-x180T-candump.py -i candump-2023-04-23_210058.log -f  b d f 1c -s -t -nc -qz](23_210058-f_b_d_f_1c-nc-s-t-qz.txt)
+`[python3 ..\UnityX\parse-x180T-candump.py -i candump-2023-04-23_210058.log -f  b d f 1c -s -t -nc -qz](23_210058-f_b_d_f_1c-nc-s-t-qz.txt)`
 
 Same but with zero data
-[python3 ..\UnityX\parse-x180T-candump.py -i candump-2023-04-23_210058.log -f  b d f 1c -s -t -nc](23_210058-f_b_d_f_1c-nc-s-t-qz.txt)
+`[python3 ..\UnityX\parse-x180T-candump.py -i candump-2023-04-23_210058.log -f  b d f 1c -s -t -nc](23_210058-f_b_d_f_1c-nc-s-t-qz.txt)`
 
 Same but without the summaries
-[python3 ..\UnityX\parse-x180T-candump.py -i candump-2023-04-23_210058.log -f  b d f 1c -nc](23_210058-f_b_d_f_1c-nc.txt)
+`[python3 ..\UnityX\parse-x180T-candump.py -i candump-2023-04-23_210058.log -f  b d f 1c -nc](23_210058-f_b_d_f_1c-nc.txt)`
