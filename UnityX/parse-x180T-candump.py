@@ -7,7 +7,7 @@ import ruyaml as YAML
 
 devices = {  0x0: 'Bus', 0x10: 'Controller',  0x1: 'BTController?', 0x3: 'Panel', 0xb: 'Outside Lights', 0xd: 'Ceiling Lights',
             0xF: 'Water Pump', 0x1C: 'Awning'}
-cmds = {0:"--", 1:"stat", 2:"what", 3: "Answer", 4: "SET", 5: "DONE?"}
+cmds = {0:"--", 1:"stat", 2:"what", 3: "Answer", 4: "SET", 5: "DONE?", 6:"6", 7:"7", 8:"8", 9:"9", 10:"10", 11:"11", 12:"12", 13:"13", 14:"14", 15:"15"}
 
 def signal_handler(signal, frame):
     global MyCANDev
@@ -81,21 +81,22 @@ def readTheCan(timemark, arbitrationId, canData, argv):
     status = "new"
     
     if len(arbitrationId)<=3:
-        idBits = bin(arbid)[2:].zfill(16)    
-        # print (f"bits = {idBits}")
-        
+        idBits = bin(arbid)[2:].zfill(12)    
     else:
-        idBits = bin(arbid)[2:].zfill(32)
-    
-    # print (f"bits = {idBits}")
-    can_startB = idBits[1:6]
-    can_fromI = int(idBits[7:12], 2)
+        idBits = bin(arbid)[2:].zfill(28)
+    can_startB = idBits[1:4]
+    SDO = can_startB == "110" or can_startB == "101"
+    NMT = can_startB == "111"
+    PDO = not (SDO or NMT)
+    can_fromI = int(idBits[4:9], 2)
     can_from = format(can_fromI, "02X")
-    cantype = format(int(idBits[13:15], 2), "01X")
+    cantype = idBits[9:11]
     if len(arbitrationId)>3:
-        can_toI = int(idBits[16:21], 2)
-        canwhat = format(int(idBits[22:28], 2), "02X")
-        cmd = format(int(idBits[29:32], 2), "01X")
+        can_toI = int(idBits[11:16], 2)
+        canwhatB = idBits[16:24]
+        canwhatH = format(int(canwhatB, 2), "02X")
+        
+        cmd = format(int(idBits[24:28], 2), "01X")
         can_to = format(can_toI, "02X")
         
     if can_fromI in devices:
@@ -110,7 +111,7 @@ def readTheCan(timemark, arbitrationId, canData, argv):
             if MyCANDev.Devices[can_fromI].data == None:
                 status = "new"    
             else:
-                cty = int(MyCANDev.Devices[can_fromI].ctype)
+                cty = int(MyCANDev.Devices[can_fromI].ctype, 2)
                 status = f"changed (for {cty}-{cmds[cty]} was {MyCANDev.Devices[can_fromI].data})"
     if can_toI >= 0:
         if can_toI in devices:
@@ -123,15 +124,22 @@ def readTheCan(timemark, arbitrationId, canData, argv):
     if not printit:
         # print (f"    skipping :  {can_from}  {can_to}")
         pass
-    printstr1 = f"{timemark:8.3f} {can_startB}  {canfrom: <15} {cantype}-{cmds[int(cantype)]: <8}"
+
+    can_start = "  "
+    if NMT:
+        can_start = "N "
+    if SDO:
+        can_start = " S"
+
+    printstr1 = f"{timemark:8.3f} {can_start}  {canfrom: <15} {cantype}-{cmds[int(cantype,2)]: <8}"
     printstr2 = ""
     
     if can_toI >= 0:
-        printstr2 = f"{canwhat}  {canto: <15} {cmd}-{cmds[int(cmd)]: <8}   "
-    if argv.nochange:
+        printstr2 = f"{canwhatB}-{canwhatH}  {canto: <15} {cmd}-{cmds[int(cmd)]: <8}   "
+    if not argv.change:
         status = ""
     if printit: 
-        print (f"{printstr1: <45} {printstr2: <36} {canData} {status}")
+        print (f"{printstr1: <45} {printstr2: <44} {canData} {status}")
 
     if can_fromI in MyCANDev.Devices:
         MyCANDev.Devices[can_fromI].ctype = cantype
@@ -141,18 +149,19 @@ def readTheCan(timemark, arbitrationId, canData, argv):
         MyCANDev.Devices[can_fromI] = CanDevice(can_fromI, canfrom, cantype, canData)
     if can_toI >= 0:
         if not can_toI in MyCANDev.Devices:
-            MyCANDev.Devices[can_toI] = CanDevice(can_toI, canfrom, cantype, canData)
+            MyCANDev.Devices[can_toI] = CanDevice(can_toI, canto, cantype, canData)
         MyCANDev.Devices[can_toI].count += 1
     MyCANDev.Devices[can_fromI].count += 1
 
     if not canData in MyCANDev.CanData:
         MyCANDev.CanData[canData] = CanDataSet(canData)
     MyCANDev.CanData[canData].addDevice(can_fromI, timemark)
-    MyCANDev.CanData[canData].addDevice(can_toI, timemark)
+    if not argv.dumptablefrom:
+        MyCANDev.CanData[canData].addDevice(can_toI, timemark)
     
     
-header = f"{'  secs': <8} bits   {'from': <15} {'type-': <11}   what {'To': <13}  {'cmd-': <12}     Data"
-headln = f"{'-'     :-<8} -----  {'-'   :-<15} {'-'    :-<11}   -- {'-':-<15}  {'-':-<10}       {'-':-<12}"
+header = f"{'  secs': <8} bit {'FROM': <15} {'type-': <15}  {'what':<11} {'TO': <13}  {'cmd-': <12}      Data"
+headln = f"{'-'     :-<8} --- {'-'   :-<15} {'-'    :-<15}  {'-':-<11} {'-':-<13}  {'-':-<12}      {'-':-<12}"
 
     
 def parse_console(argv):
@@ -177,7 +186,7 @@ def parse_console(argv):
     
 def parse_file(argv):
     starttime = 0
-    if os.path.isfile(argv.candumpFile):
+    if argv.candumpFile and os.path.isfile(argv.candumpFile):
         with open(argv.candumpFile, "r") as file:
             print (header)
             print (headln)
@@ -199,7 +208,25 @@ def parse_file(argv):
 def wrapup(args):
     global MyCANDev
     skipped = 0
+    columns = 4 
+    dcolumns = 8
+    if args.dumptablefrom:
+        args.dumptable = True
+    if args.nocolumns:
+        columns = 1
+        dcolumns = 1
     args.dumptable = args.dumptable or args.surpressincremental or args.surpresszeros or args.surpresssingles or args.onlyssingles
+    
+    if args.negfilter:
+        negfilter = args.negfilter
+    else:
+        negfilter = []
+    if args.filter:
+        for d in dict(sorted(MyCANDev.Devices.items())):
+            if format(d,"02X") in args.filter:
+                pass
+            else:
+                negfilter.append(d)
     if args.surpressincremental:
         
         skipdata = {}
@@ -223,7 +250,7 @@ def wrapup(args):
     if args.dumptable:
         print (" -*-" * 13 + "Table dump (number of instances): " + " -*-" * 13)
         for d in dict(sorted(MyCANDev.CanData.items())):
-            if args.surpressincremental and d in skipdata:
+            if (args.surpressincremental and d in skipdata):
                 skipped += 1
                 pass
             else:
@@ -231,20 +258,43 @@ def wrapup(args):
                 counts = 0
                 instances = 0
                 for i in dict(sorted(MyCANDev.CanData[d].deviceref.items())):
-                    x = x + format(i,"02X") + f":{MyCANDev.Devices[i].name:} ({str(MyCANDev.CanData[d].deviceref[i].count)})  "
-                    counts += MyCANDev.CanData[d].deviceref[i].count
-                    instances += 1
+                    if i in negfilter:
+                        skipped += 1
+                    else:
+                        x = x + format(i,"02X") + f":{MyCANDev.Devices[i].name:} ({str(MyCANDev.CanData[d].deviceref[i].count)})  "
+                        counts += MyCANDev.CanData[d].deviceref[i].count
+                        instances += 1
                 if args.surpresssingles and (counts == 1 or (counts / instances) == 1) :
                     pass
                 else:
-                    if args.onlyssingles:
-                        if (counts == 1 or (counts / instances) == 1) :
+                    if x != "":
+                        if args.onlyssingles:
+                            if (counts == 1 or (counts / instances) == 1) :
+                                print (f" {d} {x}")
+                        else:
                             print (f" {d} {x}")
-                    else:
-                        print (f" {d} {x}")
         if args.surpressincremental:
             if skipped:
                 print (f"*** Skipped {skipped} data elements")
+    if args.crossdump:
+        print (" -" * 22 + "Cross-Table ID to data (instances)" + " -" * 22)
+        for id in dict(sorted(MyCANDev.Devices.items())):
+            if not id in negfilter:
+                dataline = []
+                i = 0
+                for d in dict(sorted(MyCANDev.CanData.items())):
+                    if (id in MyCANDev.CanData[d].deviceref):
+                        x = f"    {d} ({str(MyCANDev.CanData[d].deviceref[id].count)})"
+                        dataline.append(x)
+                        i += MyCANDev.CanData[d].deviceref[id].count
+                print (format(id, "02X") + f" {MyCANDev.Devices[id].name: <15}   (total:{i})")
+                x = ""
+                for i in range(len(dataline)):
+                    x = x + f"{dataline[i]: <26}" + "    "
+                    if i % columns ==0:
+                        print (x)
+                        x = ""
+                print (x)
     x = ""
     i = 0
     if args.dumpsumary or not args.dumptable:
@@ -258,7 +308,7 @@ def wrapup(args):
                 if id in devices:
                     x = x + format(id, "02X") + f" {devices[id]: <15}     " 
                     i += 1
-        if ((i % 4 ==0 and args.dumpsumary) or (i % 8 ==0 and not args.dumpsumary and not args.dumptable)):
+        if ((i % columns ==0 and args.dumpsumary) or (i % dcolumns ==0 and not args.dumpsumary and not args.dumptable)):
             print (x)
             x = ""
     print (x)
@@ -269,7 +319,7 @@ def main():
     """
     parser = argparse.ArgumentParser()
     group = parser.add_mutually_exclusive_group()
-    group.add_argument("-i", "--candump", dest="candumpFile", 
+    group.add_argument("-i", "--candump", dest="candumpFile",
                         help="filepath to candump file in pure log format (not ASC)")
     group.add_argument("-pipe", "--candumppipe", dest="canpipe", action='store_true', 
                         help="pipe candump in pure log format to this script")
@@ -279,13 +329,19 @@ def main():
                         help="remove this ids (from or to) as HEX such as: 1e  They can be space seperated multiple values")
     parser.add_argument("-t", "--table", dest="dumptable", action='store_true', default = False,
                         help="dump a table of the data value counts and ids that used them")
+    parser.add_argument("-tf", "--tableonlyfrom", dest="dumptablefrom", action='store_true', default = False,
+                        help="when building the a table of the data values only counts From (not To) and ids that used them")
+    parser.add_argument("-ct", "--crosstable", dest="crossdump", action='store_true', default = False,
+                        help="dump a table of id with count of data response")
     parser.add_argument("-qz", "--quietzero", dest="surpresszeros", action='store_true', default = False,
                         help="Skip lines which are all zero in the data (implies table)")
     parser.add_argument("-q1", "--quietone", dest="surpresssingles", action='store_true', default = False,
                         help="Skip data in the table where their is only one instance (implies table)")
     parser.add_argument("-qi", "--quietinc", dest="surpressincremental", action='store_true', default = False,
                         help="Skip data in the table if they appear as incremental (implies table)")
-    parser.add_argument("-nc", "--nochange", dest="nochange", action='store_true', default = False,
+    parser.add_argument("-ch", "--change", dest="change", action='store_true', default = False,
+                        help="Do not list the change information")
+    parser.add_argument("-col1", "--nocolumns", dest="nocolumns", action='store_true', default = False,
                         help="Do not list the change information")
     
     parser.add_argument("-o1", "--onlyone", dest="onlyssingles", action='store_true', default = False,

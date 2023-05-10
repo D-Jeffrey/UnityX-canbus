@@ -12,19 +12,29 @@ bits `7:12` are `FROM`, bits `16:21` are `TO`
 If the arbitration id is extend then is it a TO FROM (or maybe FROM TO)  The bits specific the to and from.  0x10 being the controler.
 
 ```
+           0123 4567 8901 2345 6789 0123 4567
 1A18502x = 0001 1010 0001 1000 0101 0000 0010
+| NMT/SDO  |-||----| |  |         |    | |  |
          From |----| |  |         |    | |  |
               Type   |--|         |    | |  |
                      ???  |------||    | |  |
                                To |----| |  |
                                Command   |--|
 
+
 1D0      = 0001 1101 0000       
+  NMT/SDO  |-||----| |  |
          From |----| |  |
               Type   |--|
 
 ```
 
+NMT/SDO| Value | Meaning?
+-----  |----   | ----
+NMT    | 111   | Network management is used to initialize the network and to monitor nodes.
+SDO Rx | 110   | Service Data Object. A CAN telegram with a protocol for communication with data in the object directory (typically parameter data).
+SDO Tx | 101   | Service Data Object. A CAN telegram with a protocol for communication with data in the object directory (typically parameter data).
+PDO    | 000   | Process Data Object. A CAN telegram for the transfer of process data (e.g. I/O data) (most data)
 Type | Meaning?
 ---  | ---
 0 | Heartbeat - None

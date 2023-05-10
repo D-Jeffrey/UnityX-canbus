@@ -14,3 +14,10 @@ There are some people out there who are connecting the RV or Trailer over Ethern
     - Suprise it is something else ... a total custom nightmare
 - use the code to decode [parse-x180T-candump.py](UnityX/parse-x180T-candump.py)
 - [Examples](examples/examples.md)
+
+What did we look at:
+- [LeisureCAN](https://leisurecan.org/) Interesting ideas on how the bits might be used, but does not match (though there are simliar concepts).  I would hope GD would not build something based on a group of  leisure vehicle enthusiasts.
+- [VSCP](https://en.wikipedia.org/wiki/Very_Simple_Control_Protocol) It does not have the From TO IDs.
+- [SAE J1939](https://en.wikipedia.org/wiki/SAE_J1939) in-vehicle network for buses and trucks - the right speed, much to complex for what I would expect here, moving on
+
+

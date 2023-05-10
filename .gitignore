@@ -1,0 +1,8 @@
+*.out
+
+*.dbc
+poll-data/
+.vscode/
+OpenEDS/
+UnityX/*.txt
+
