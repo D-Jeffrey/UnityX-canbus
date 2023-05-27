@@ -9,8 +9,8 @@ char g17_proc_info[] = "/proc/cpuinfo";
 char g19_Serial[] = "Serial";
 
 
-// #ifdef _MSC_BUILD
-char* mystrcasestr(const char* str1, const char* str2) {
+#ifdef _MSC_BUILD
+char* strcasestr(const char* str1, const char* str2) {
         const char* p1 = str1;
         const char* p2 = str2;
         const char* r = *p2 == 0 ? str1 : 0;
@@ -31,7 +31,7 @@ char* mystrcasestr(const char* str1, const char* str2) {
         }
         return *p2 == 0 ? (char*)r : 0;
     }
-// #endif // _MSC_BUILD
+#endif // _MSC_BUILD
 
 int32_t ReadFromProcInfo(char * readwindow, int32_t maxcharacters) {
 #ifdef _MSC_BUILD
@@ -66,7 +66,7 @@ int32_t ReadFromProcInfo(char * readwindow, int32_t maxcharacters) {
     char * found_char_pos; 
     char * str3;
     char * next_token; 
-    if (mystrcasestr((char *)&fileReadingBuffer, (char *)&g19_Serial) != NULL) {
+    if (strcasestr((char *)&fileReadingBuffer, (char *)&g19_Serial) != NULL) {
         printf("--Looking at %s\n", (char*)&fileReadingBuffer);
         found_char_pos = strchr((char *)&fileReadingBuffer, ':');  // 58
         if (found_char_pos != NULL) {
@@ -93,7 +93,7 @@ int32_t ReadFromProcInfo(char * readwindow, int32_t maxcharacters) {
     char * str = fgets((char *)&fileReadingBuffer, 128, file); 
     int32_t result = -2;
     while (str != NULL) {
-        if (mystrcasestr((char *)&fileReadingBuffer, (char *)&g19_Serial) != NULL) {
+        if (strcasestr((char *)&fileReadingBuffer, (char *)&g19_Serial) != NULL) {
             found_char_pos = strchr((char *)&fileReadingBuffer, ':');  // 58
             if (found_char_pos != NULL) {
                 str3 = found_char_pos + 1;
