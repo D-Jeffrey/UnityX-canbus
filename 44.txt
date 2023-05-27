@@ -1,0 +1,353 @@
+  secs   bit FROM            type-            what        TO             cmd-              Data
+-------- --- --------------- ---------------  ----------- -------------  ------------      ------------
+   0.000  S  Water Pump      100-SET                                                       00 
+   0.000     Awning          011-Answer                                                    02140000001B3004 
+   0.001     ?unknown 02     110-6                                                         02140000001B3004 
+   0.001     ?unknown 15     100-SET                                                       02140000001B3004 
+   0.002     ?unknown 03     010-what                                                      02140000001B3004 
+   0.002     Ceiling Lights  111-7                                                         02140000001B3004 
+   0.005     Outside Lights  100-SET                                                       02140000001B3004 
+   0.006     Water Pump      100-SET                                                       02140000001B3004 
+   0.010     ?unknown 07     001-stat                                                      02140000001B3004 
+   0.011     Controller      100-SET                                                       02140000001B3004 
+   0.012     Outside Lights  101-DONE?                                                     02140000001B3004 
+   0.015     bus 2           110-6                                                         02140000001B3004 
+   0.016     Panel           001-stat                                                      02140000001B3004 
+   0.020     ?unknown 1A     000---                                                        02140000001B3004 
+   0.021     Water Pump      111-7                                                         02140000001B3004 
+   0.022     Awning          011-Answer                                                    00000000 
+   0.025     ?unknown 02     110-6                                                         00000000 
+   0.026     ?unknown 15     100-SET                                                       00000000 
+   0.030     ?unknown 03     010-what                                                      00000000 
+   0.030     Ceiling Lights  111-7                                                         00000000 
+   0.032     Outside Lights  100-SET                                                       00000000 
+   0.034     Water Pump      100-SET                                                       00000000 
+   0.036     ?unknown 07     001-stat                                                      00000000 
+   0.040     Controller      100-SET                                                       00000000 
+   0.040     Outside Lights  101-DONE?                                                     00000000 
+   0.042     bus 2           110-6                                                         00000000 
+   0.044     Panel           001-stat                                                      00000000 
+   0.046     ?unknown 1A     000---                                                        00000000 
+   0.050     Water Pump      111-7                                                         00000000 
+   0.051     Awning          011-Answer                                                    00A32C2100691011 
+   0.052     ?unknown 02     110-6                                                         00A32C2100002011 
+   0.054     ?unknown 15     100-SET                                                       00A32C2100603111 
+   0.056     ?unknown 03     010-what                                                      00A32C2100604211 
+   0.060     Ceiling Lights  111-7                                                         00A32C1E003D1011 
+   0.061     Outside Lights  100-SET                                                       00A32C1E008F2011 
+   0.062     Water Pump      100-SET                                                       00A32C1E00033019 
+   0.065     ?unknown 07     001-stat                                                      00A32C1E00044011 
+   0.066     Controller      100-SET                                                       00A32C1E00055019 
+   0.070     Outside Lights  101-DONE?                                                     00A32C0A00431000 
+   0.071     bus 2           110-6                                                         00A32C0A00452000 
+   0.072     Panel           001-stat                                                      00A32C0A00443100 
+   0.075     ?unknown 1A     000---                                                        00A32C0A00444200 
+   0.076     Water Pump      111-7                                                         00A32C2700000E00 
+   0.113     ?unknown 03     010-what                                                      C0FF00000000 
+   0.113     Controller      100-SET                                                       80FF001D0000 
+   0.273     BTController?   101-DONE?                                                     00 
+   0.447     Controller      100-SET                                                       80FF001E0000 
+   0.538     Ceiling Lights  111-7                                                         80FF00010000 
+   0.598     Awning          011-Answer                                                    C0FF00000000 
+   0.726     Outside Lights  100-SET                                                       80FF00000000 
+   0.732     Water Pump      100-SET                                                       80FF00000000 
+   0.732     Bus             001-stat                                                      0040 
+   0.743     ?unknown 02     110-6                                                         C0FF00000000 
+   0.747     bus 2           110-6                                                         00 
+   0.748     Panel           001-stat                                                      00 
+   0.757     Outside Lights  101-DONE?                                                     00 
+   0.758     ?unknown 1A     000---                                                        00 
+   0.760     Water Pump      111-7                                                         00 
+   0.768     ?unknown 07     001-stat                                                      80FF00000000 
+   0.781     Controller      100-SET                                                       80FF001F0000 
+   0.782     Panel           100-SET          1000001-41  Outside Lights  1-stat           002B 
+   0.783     ?unknown 0E     001-stat         1010001-51  BTController?   1-stat           002B0D8293 
+   0.836 N   Bus             001-stat                                                      00005B8DFFFF0000 
+   0.846     ?unknown 15     100-SET                                                       C0FF00000000 
+   0.861  S  BTController?   101-DONE?                                                     00 
+   0.862     BTController?   101-DONE?                                                     00140000001AE876 
+   0.862     BTController?   101-DONE?                                                     00000000 
+   0.862     BTController?   101-DONE?                                                     00A20D2B00441201 
+   0.876  S  Bus             001-stat                                                      00 
+   0.877     Bus             001-stat                                                      00180000001B2EAD 
+   0.878     Bus             001-stat                                                      00000000 
+   0.878     Bus             001-stat                                                      00B8012400000100 
+   1.000  S  Water Pump      100-SET                                                       00 
+   1.000     Ceiling Lights  111-7                                                         02140000001B3004 
+   1.001     Outside Lights  100-SET                                                       02140000001B3004 
+   1.001     Water Pump      100-SET                                                       02140000001B3004 
+   1.002     Awning          011-Answer                                                    02140000001B3004 
+   1.002     ?unknown 02     110-6                                                         02140000001B3004 
+   1.005     ?unknown 15     100-SET                                                       02140000001B3004 
+   1.006     ?unknown 03     010-what                                                      02140000001B3004 
+   1.010     ?unknown 07     001-stat                                                      02140000001B3004 
+   1.011     Controller      100-SET                                                       02140000001B3004 
+   1.012     Outside Lights  101-DONE?                                                     02140000001B3004 
+   1.015     bus 2           110-6                                                         02140000001B3004 
+   1.016     Panel           001-stat                                                      02140000001B3004 
+   1.020     ?unknown 1A     000---                                                        02140000001B3004 
+   1.021     Water Pump      111-7                                                         02140000001B3004 
+   1.022     Awning          011-Answer                                                    00000000 
+   1.024     ?unknown 02     110-6                                                         00000000 
+   1.026     ?unknown 15     100-SET                                                       00000000 
+   1.030     ?unknown 03     010-what                                                      00000000 
+   1.030     Ceiling Lights  111-7                                                         00000000 
+   1.032     Outside Lights  100-SET                                                       00000000 
+   1.034     Water Pump      100-SET                                                       00000000 
+   1.036     ?unknown 07     001-stat                                                      00000000 
+   1.040     Controller      100-SET                                                       00000000 
+   1.040     Outside Lights  101-DONE?                                                     00000000 
+   1.042     bus 2           110-6                                                         00000000 
+   1.044     Panel           001-stat                                                      00000000 
+   1.046     ?unknown 1A     000---                                                        00000000 
+   1.050     Water Pump      111-7                                                         00000000 
+   1.051     Awning          011-Answer                                                    00A32C2100691011 
+   1.052     ?unknown 02     110-6                                                         00A32C2100002011 
+   1.055     ?unknown 15     100-SET                                                       00A32C2100603111 
+   1.056     ?unknown 03     010-what                                                      00A32C2100604211 
+   1.060     Ceiling Lights  111-7                                                         00A32C1E003D1011 
+   1.061     Outside Lights  100-SET                                                       00A32C1E008F2011 
+   1.062     Water Pump      100-SET                                                       00A32C1E00033019 
+   1.065     ?unknown 07     001-stat                                                      00A32C1E00044011 
+   1.066     Controller      100-SET                                                       00A32C1E00055019 
+   1.070     Outside Lights  101-DONE?                                                     00A32C0A00431000 
+   1.071     bus 2           110-6                                                         00A32C0A00452000 
+   1.072     Panel           001-stat                                                      00A32C0A00443100 
+   1.075     ?unknown 1A     000---                                                        00A32C0A00444200 
+   1.076     Water Pump      111-7                                                         00A32C2700000E00 
+   1.115     Controller      100-SET                                                       80FF001D0000 
+   1.116     ?unknown 03     010-what                                                      C0FF00000000 
+   1.274     BTController?   101-DONE?                                                     00 
+   1.357     Bus             100-SET          1110001-71  Water Pump      1-stat           002B 
+   1.358     ?unknown 17     101-DONE?        0010001-11  Bus             1-stat           002B0D82C5 
+   1.515     Controller      100-SET                                                       80FF001E0000 
+   1.539     Ceiling Lights  111-7                                                         80FF00010000 
+   1.599     Awning          011-Answer                                                    C0FF00000000 
+   1.727     Outside Lights  100-SET                                                       80FF00000000 
+   1.733     Bus             001-stat                                                      0040 
+   1.734     Water Pump      100-SET                                                       80FF00000000 
+   1.744     ?unknown 02     110-6                                                         C0FF00000000 
+   1.748     bus 2           110-6                                                         00 
+   1.749     Panel           001-stat                                                      00 
+   1.758     Outside Lights  101-DONE?                                                     00 
+   1.759     ?unknown 1A     000---                                                        00 
+   1.761     Water Pump      111-7                                                         00 
+   1.769     ?unknown 07     001-stat                                                      80FF00000000 
+   1.792     Panel           100-SET          1000001-41  Outside Lights  1-stat           002B 
+   1.793     ?unknown 0E     001-stat         1010001-51  BTController?   1-stat           002B0D82F7 
+   1.836 N   Bus             001-stat                                                      00005B8EFFFF0000 
+   1.847     ?unknown 15     100-SET                                                       C0FF00000000 
+   1.861  S  BTController?   101-DONE?                                                     00 
+   1.862     BTController?   101-DONE?                                                     00140000001AE876 
+   1.862     BTController?   101-DONE?                                                     00000000 
+   1.862     BTController?   101-DONE?                                                     00A20D2B00441201 
+   1.876  S  Bus             001-stat                                                      00 
+   1.877     Bus             001-stat                                                      00180000001B2EAD 
+   1.878     Bus             001-stat                                                      00000000 
+   1.878     Bus             001-stat                                                      00B8012400000100 
+   1.889     Controller      100-SET                                                       80FF001D0000 
+   1.963     Panel           100-SET          0000000-00  Bus             2-what           55 
+   1.963     Panel           100-SET          0000000-00  Bus             2-what           AA 
+   1.963     Panel           101-DONE?        1010000-50  BTController?   2-what           5500 
+   1.964     Panel           101-DONE?        1010000-50  BTController?   2-what           AA00 
+   1.964     ?unknown 11     101-DONE?        1010000-50  BTController?   2-what           5500 
+   1.964     Outside Lights  001-stat         1010000-50  BTController?   2-what           5500 
+   1.965     ?unknown 16     001-stat         1010000-50  BTController?   2-what           5500 
+   1.965     ?unknown 0D     001-stat         1010000-50  BTController?   2-what           5500 
+   1.965     ?unknown 1B     101-DONE?        1010000-50  BTController?   2-what           5500 
+   1.966     ?unknown 0E     001-stat         1010000-50  BTController?   2-what           5500 
+   1.966     ?unknown 16     001-stat         1010000-50  BTController?   2-what           5500 
+   1.966     Awning          101-DONE?        1010000-50  BTController?   2-what           5500 
+   1.967     ?unknown 02     001-stat         1010000-50  BTController?   2-what           5500 
+   1.967     ?unknown 0E     101-DONE?        1010000-50  BTController?   2-what           5500 
+   1.967     ?unknown 03     001-stat         1010000-50  BTController?   2-what           5500 
+   1.968     ?unknown 18     101-DONE?        1010000-50  BTController?   2-what           5500 
+   1.968     bus 2           001-stat         1010000-50  BTController?   2-what           5500 
+   1.969     ?unknown 17     101-DONE?        1010000-50  BTController?   2-what           5500 
+   1.969     ?unknown 11     101-DONE?        1010000-50  BTController?   2-what           AA00 
+   1.969     Outside Lights  001-stat         1010000-50  BTController?   2-what           AA09 
+   1.970     ?unknown 16     001-stat         1010000-50  BTController?   2-what           AA09 
+   1.970     ?unknown 0D     001-stat         1010000-50  BTController?   2-what           AA09 
+   1.970     ?unknown 1B     101-DONE?        1010000-50  BTController?   2-what           AA09 
+   1.971     ?unknown 0E     001-stat         1010000-50  BTController?   2-what           AA09 
+   1.971     ?unknown 16     001-stat         1010000-50  BTController?   2-what           AA09 
+   1.971     Awning          101-DONE?        1010000-50  BTController?   2-what           AA09 
+   1.972     ?unknown 02     001-stat         1010000-50  BTController?   2-what           AA09 
+   1.972     ?unknown 0E     101-DONE?        1010000-50  BTController?   2-what           AA09 
+   1.972     ?unknown 03     001-stat         1010000-50  BTController?   2-what           AA09 
+   1.973     Panel           100-SET          1000100-44  Outside Lights  2-what           0004 
+   1.973     ?unknown 18     101-DONE?        1010000-50  BTController?   2-what           AA09 
+   1.973     bus 2           001-stat         1010000-50  BTController?   2-what           AA09 
+   1.974     ?unknown 17     101-DONE?        1010000-50  BTController?   2-what           AA09 
+   1.974     ?unknown 0E     001-stat         1010100-54  BTController?   2-what           0004D4A0FEB2 
+   1.975     Panel           100-SET          1000100-44  Outside Lights  3-Answer         0004315F39CD 
+   1.975     ?unknown 0E     001-stat         1010100-54  BTController?   3-Answer         0004 
+   1.978     Outside Lights  100-SET                                                       80FF00000000 
+   1.982     Panel           110-6            1000000-40  Outside Lights  1-stat            
+   2.000  S  Water Pump      100-SET                                                       00 
+   2.000     Awning          011-Answer                                                    02140000001B3004 
+   2.001     ?unknown 02     110-6                                                         02140000001B3004 
+   2.001     ?unknown 15     100-SET                                                       02140000001B3004 
+   2.002     ?unknown 03     010-what                                                      02140000001B3004 
+   2.002     Ceiling Lights  111-7                                                         02140000001B3004 
+   2.004     Outside Lights  100-SET                                                       06140000001B3004 
+   2.006     Water Pump      100-SET                                                       02140000001B3004 
+   2.010     ?unknown 07     001-stat                                                      02140000001B3004 
+   2.011     Controller      100-SET                                                       02140000001B3004 
+   2.012     Outside Lights  101-DONE?                                                     02140000001B3004 
+   2.014     bus 2           110-6                                                         02140000001B3004 
+   2.016     Panel           001-stat                                                      02140000001B3004 
+   2.020     ?unknown 1A     000---                                                        02140000001B3004 
+   2.021     Water Pump      111-7                                                         02140000001B3004 
+   2.022     Awning          011-Answer                                                    00000000 
+   2.025     ?unknown 02     110-6                                                         00000000 
+   2.026     ?unknown 15     100-SET                                                       00000000 
+   2.029     Outside Lights  100-SET                                                       81FF001A0000 
+   2.030     ?unknown 03     010-what                                                      00000000 
+   2.030     Ceiling Lights  111-7                                                         00000000 
+   2.032     Outside Lights  100-SET                                                       00000000 
+   2.035     Water Pump      100-SET                                                       00000000 
+   2.036     ?unknown 07     001-stat                                                      00000000 
+   2.040     Controller      100-SET                                                       00000000 
+   2.040     Outside Lights  101-DONE?                                                     00000000 
+   2.042     bus 2           110-6                                                         00000000 
+   2.044     Panel           001-stat                                                      00000000 
+   2.046     ?unknown 1A     000---                                                        00000000 
+   2.050     Water Pump      111-7                                                         00000000 
+   2.051     Awning          011-Answer                                                    00A32C2100691011 
+   2.052     ?unknown 02     110-6                                                         00A32C2100002011 
+   2.055     ?unknown 15     100-SET                                                       00A32C2100603111 
+   2.056     ?unknown 03     010-what                                                      00A32C2100604211 
+   2.060     Ceiling Lights  111-7                                                         00A32C1E003D1011 
+   2.061     Outside Lights  100-SET                                                       00A32C1E008F2011 
+   2.062     Water Pump      100-SET                                                       00A32C1E00033019 
+   2.065     ?unknown 07     001-stat                                                      00A32C1E00044011 
+   2.066     Controller      100-SET                                                       00A32C1E00055019 
+   2.070     Outside Lights  101-DONE?                                                     00A32C0A00431000 
+   2.071     bus 2           110-6                                                         00A32C0A00452000 
+   2.072     Panel           001-stat                                                      00A32C0A00443100 
+   2.074     ?unknown 1A     000---                                                        00A32C0A00444200 
+   2.076     Water Pump      111-7                                                         00A32C2700000E00 
+   2.081     Outside Lights  100-SET                                                       81FF00420000 
+   2.116     ?unknown 03     010-what                                                      C0FF00000000 
+   2.131     Outside Lights  100-SET                                                       81FF00630000 
+   2.182     Outside Lights  100-SET                                                       81FF00780000 
+   2.223     Controller      100-SET                                                       80FF001C0000 
+   2.233     Outside Lights  100-SET                                                       81FF00870000 
+   2.275     BTController?   101-DONE?                                                     00 
+   2.285     Outside Lights  100-SET                                                       81FF00930000 
+   2.336     Outside Lights  100-SET                                                       81FF009B0000 
+   2.387     Outside Lights  100-SET                                                       81FF00A10000 
+   2.438     Outside Lights  100-SET                                                       81FF00A60000 
+   2.483     Panel           100-SET          1000100-44  Outside Lights  4-SET            0004 
+   2.489     Outside Lights  100-SET                                                       81FF00A90000 
+   2.540     Ceiling Lights  111-7                                                         80FF00010000 
+   2.541     Outside Lights  100-SET                                                       81FF00AB0000 
+   2.557     Controller      100-SET                                                       80FF001D0000 
+   2.591     Outside Lights  100-SET                                                       81FF00AD0000 
+   2.600     Awning          011-Answer                                                    C0FF00000000 
+   2.642     Outside Lights  100-SET                                                       81FF00AE0000 
+   2.693     Outside Lights  100-SET                                                       81FF00AF0000 
+   2.734     Bus             001-stat                                                      0040 
+   2.735     Water Pump      100-SET                                                       80FF00000000 
+   2.746     ?unknown 02     110-6                                                         C0FF00000000 
+   2.749     bus 2           110-6                                                         00 
+   2.750     Panel           001-stat                                                      00 
+   2.756     Outside Lights  100-SET                                                       81FF00B00000 
+   2.759     Outside Lights  101-DONE?                                                     00 
+   2.760     ?unknown 1A     000---                                                        00 
+   2.762     Water Pump      111-7                                                         00 
+   2.770     ?unknown 07     001-stat                                                      80FF00000000 
+   2.802     Panel           100-SET          1000001-41  Outside Lights  1-stat           002B 
+   2.803     ?unknown 0E     001-stat         1010001-51  BTController?   1-stat           002B0D7B58 
+   2.836 N   Bus             001-stat                                                      00005B8FFFFF0000 
+   2.848     ?unknown 15     100-SET                                                       C0FF00000000 
+   2.857     Bus             100-SET          1110001-71  Water Pump      1-stat           002B 
+   2.858     ?unknown 17     101-DONE?        0010001-11  Bus             1-stat           002B0D7B79 
+   2.861  S  BTController?   101-DONE?                                                     00 
+   2.862     BTController?   101-DONE?                                                     00140000001AE876 
+   2.862     BTController?   101-DONE?                                                     00000000 
+   2.862     BTController?   101-DONE?                                                     00A20D2B00441201 
+   2.876  S  Bus             001-stat                                                      00 
+   2.877     Bus             001-stat                                                      00180000001B2EAD 
+   2.878     Bus             001-stat                                                      00000000 
+   2.878     Bus             001-stat                                                      00B8012400000100 
+   2.891     Outside Lights  100-SET                                                       81FF00B10000 
+   2.993     Panel           100-SET          1000100-44  Outside Lights  5-DONE?          0004 
+   2.993     ?unknown 0E     001-stat         1010100-54  BTController?   5-DONE?          000400 
+   3.000  S  Water Pump      100-SET                                                       00 
+   3.001     Awning          011-Answer                                                    02140000001B3004 
+   3.001     ?unknown 02     110-6                                                         02140000001B3004 
+   3.001     ?unknown 15     100-SET                                                       02140000001B3004 
+   3.002     ?unknown 03     010-what                                                      02140000001B3004 
+   3.002     Ceiling Lights  111-7                                                         02140000001B3004 
+   3.005     Outside Lights  100-SET                                                       02140000001B3004 
+   3.006     Water Pump      100-SET                                                       02140000001B3004 
+   3.010     ?unknown 07     001-stat                                                      02140000001B3004 
+   3.011     Controller      100-SET                                                       02140000001B3004 
+   3.012     Outside Lights  101-DONE?                                                     02140000001B3004 
+   3.015     bus 2           110-6                                                         02140000001B3004 
+   3.016     Panel           001-stat                                                      02140000001B3004 
+   3.020     ?unknown 1A     000---                                                        02140000001B3004 
+   3.021     Water Pump      111-7                                                         02140000001B3004 
+   3.022     Awning          011-Answer                                                    00000000 
+   3.024     ?unknown 02     110-6                                                         00000000 
+   3.026     ?unknown 15     100-SET                                                       00000000 
+   3.030     ?unknown 03     010-what                                                      00000000 
+   3.030     Ceiling Lights  111-7                                                         00000000 
+   3.032     Outside Lights  100-SET                                                       00000000 
+   3.035     Water Pump      100-SET                                                       00000000 
+   3.036     ?unknown 07     001-stat                                                      00000000 
+   3.040     Controller      100-SET                                                       00000000 
+   3.040     Outside Lights  101-DONE?                                                     00000000 
+   3.042     bus 2           110-6                                                         00000000 
+   3.045     Panel           001-stat                                                      00000000 
+   3.046     ?unknown 1A     000---                                                        00000000 
+   3.050     Water Pump      111-7                                                         00000000 
+   3.051     Awning          011-Answer                                                    00A32C2100691011 
+   3.052     ?unknown 02     110-6                                                         00A32C2100002011 
+   3.055     ?unknown 15     100-SET                                                       00A32C2100603111 
+   3.056     ?unknown 03     010-what                                                      00A32C2100604211 
+   3.060     Ceiling Lights  111-7                                                         00A32C1E003D1011 
+   3.061     Outside Lights  100-SET                                                       00A32C1E008F2011 
+   3.062     Water Pump      100-SET                                                       00A32C1E00033019 
+   3.065     ?unknown 07     001-stat                                                      00A32C1E00044011 
+   3.066     Controller      100-SET                                                       00A32C1E00055019 
+   3.070     Outside Lights  101-DONE?                                                     00A32C0A00431000 
+   3.071     bus 2           110-6                                                         00A32C0A00452000 
+   3.072     Panel           001-stat                                                      00A32C0A00443100 
+   3.074     ?unknown 1A     000---                                                        00A32C0A00444200 
+   3.076     Water Pump      111-7                                                         00A32C2700000E00 
+   3.085     Controller      100-SET                                                       80FF001C0000 
+   3.117     ?unknown 03     010-what                                                      C0FF00000000 
+   3.276     BTController?   101-DONE?                                                     00 
+   3.419     Controller      100-SET                                                       80FF001E0000 
+   3.451     Outside Lights  100-SET                                                       81FF00B20000 
+   3.541     Ceiling Lights  111-7                                                         80FF00010000 
+   3.601     Awning          011-Answer                                                    C0FF00000000 
+   3.735     Bus             001-stat                                                      0040 
+   3.736     Water Pump      100-SET                                                       80FF00000000 
+   3.746     ?unknown 02     110-6                                                         C0FF00000000 
+   3.750     bus 2           110-6                                                         00 
+   3.751     Panel           001-stat                                                      00 
+   3.753     Controller      100-SET                                                       80FF001D0000 
+   3.760     Outside Lights  101-DONE?                                                     00 
+   3.761     ?unknown 1A     000---                                                        00 
+   3.763     Water Pump      111-7                                                         00 
+   3.771     ?unknown 07     001-stat                                                      80FF00000000 
+   3.785     Outside Lights  100-SET                                                       81FF00B10000 
+   3.812     Panel           100-SET          1000001-41  Outside Lights  1-stat           002B 
+   3.813     ?unknown 0E     001-stat         1010001-51  BTController?   1-stat           002B0D7BCC 
+   3.836 N   Bus             001-stat                                                      00005B90FFFF0000 
+   3.849     ?unknown 15     100-SET                                                       C0FF00000000 
+   3.861  S  BTController?   101-DONE?                                                     00 
+   3.862     BTController?   101-DONE?                                                     00140000001AE876 
+   3.862     BTController?   101-DONE?                                                     00000000 
+   3.862     BTController?   101-DONE?                                                     00A20D2B00441201 
+   3.876  S  Bus             001-stat                                                      00 
+   3.877     Bus             001-stat                                                      00180000001B2EAD 
+   3.878     Bus             001-stat                                                      00000000 
+   3.878     Bus             001-stat                                                      00B8012400000100 
+ - - - - - - - - - - - - - - - - - - - - - - - - -Summary (instances) - - - - - - - - - - - - - - - - - - - - - - - - -
+00 Bus                 01 BTController?       05 Water Pump          06 Panel               08 bus 2               0B Outside Lights      10 Controller          1C Awning              
+1E Ceiling Lights      

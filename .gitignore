@@ -5,4 +5,11 @@ poll-data/
 .vscode/
 OpenEDS/
 UnityX/*.txt
+UnityX/entity/
+UnityX/entity_factory_support.py
+UnityX/mqtt.py
+UnityX/plugin_support.py
+
+
+
 

@@ -7,25 +7,26 @@ In the lippert X Unity (Grand Design) they use a `11-bit` address to identify th
 
 take the first 3 digits of the Arbitation id (Extended or otherwise) and you can determine the device it applies too by lookings at bit 0-11 bit. This is, using the first 3 bytes as `id RSH 3 AND 0x1F`
 
-bits `7:12` are `FROM`, bits `16:21` are `TO`
+bits `4:8` are `FROM`, bits `12:16` are `TO`   bits `24:27` are `command`
+bits `9:11` maybe a `command`, `12:23` are `?unknown?` 
 
 If the arbitration id is extend then is it a TO FROM (or maybe FROM TO)  The bits specific the to and from.  0x10 being the controler.
 
 ```
            0123 4567 8901 2345 6789 0123 4567
 1A18502x = 0001 1010 0001 1000 0101 0000 0010
-| NMT/SDO  |-||----| |  |         |    | |  |
-         From |----| |  |         |    | |  |
-              Type   |--|         |    | |  |
-                     ???  |------||    | |  |
-                               To |----| |  |
-                               Command   |--|
+| NMT/SDO  0XXX |----|| | |    ||      | |  |
+         From   XXXX X| | |    ||      | |  |
+              Type    XXX |    ||      | |  |
+                      To  XXXX X|      | |  |
+                             ???|------| |  |
+                                Command  |--|
 
 
 1D0      = 0001 1101 0000       
-  NMT/SDO  |-||----| |  |
-         From |----| |  |
-              Type   |--|
+  NMT/SDO  XXXX-|  |----|| |
+         From   XXXX X| |
+              Type    XXX
 
 ```
 
@@ -111,47 +112,19 @@ Still very early stages but decoding is proceeding... See [candump_all.log-parse
 
 Using UnityX.parse-x180T-candump, some of the result is as following:
 ```
- 196.622 from: ?unknown 16     --                                             `81FF01700000` changed (for -- was 81FF01680000)
- 196.652 from: Panel           what       04 to: Ceiling Lights  SET          `0004` changed (for Answer was )` 
- 196.664 from: ?unknown 1E     stat                                           `C0FF00000000` changed (for stat was 00000000)
- ...
- 197.146 from: ?unknown 1A     what                                           `C0FF00000000` changed (for -- was 00000000)
- 197.151 from: ?unknown 17     what                                           `80FF00240000` changed (for what was 00000000)
- 197.162 from: Panel           what       01 to: Outside Lights  stat         `002B` changed (for stat was 00A32C2100604211)` 
- 197.162 from: Panel           what       04 to: Ceiling Lights  DONE         `0004` changed (for what was 002B)` 
- 197.163 from: ?unknown 17     --         11 to: Controller      stat         `002B0D7600` changed (for what was 80FF00240000)` 
- 197.163 from: ?unknown 1A     --         14 to: Controller      DONE         `000400` changed (for what was C0FF00000000)` 
- 197.256 from: ?unknown 12     what                                           `80FF00010000` changed (for Answer was 00000000)
- ...
- 226.636 from: ?unknown 15     what                                           `81FF00A40000` changed (for what was 81FF00A00000)
- 226.682 from: Panel           what       04 to: Outside Lights  SET          `0004` changed (for what was 002B)` 
- 226.687 from: ?unknown 15     what                                           `81FF00A80000` changed (for what was 81FF00A40000)
- ...
- 227.178 from: ?unknown 1A     what                                           `C0FF00000000` changed (for -- was 00000000)
- 227.192 from: Panel           what       04 to: Outside Lights  DONE         `0004` changed (for stat was 00A32C2100604211)` 
- 227.193 from: ?unknown 17     --         14 to: Controller      DONE         `000400` changed (for what was 80FF00280000)` 
- 227.209 from: ?unknown 17     what                                           `80FF00290000` changed (for -- was 000400)
- ...
- 228.222 from: Panel           what       04 to: Outside Lights  SET          `0004` changed (for stat was 00A32C2100604211)` 
- ...
- 257.812 from: Panel           what       34 to: Awning          SET          `0004` changed (for stat was 02140000001B3004)` 
- ...
- 258.322 from: Panel           what       34 to: Awning          SET          `0004` changed (for Answer was )` 
- ...
- 258.842 from: Panel           what       34 to: Awning          SET          `0004` changed (for Answer was )` 
- ...
- 259.352 from: Panel           what       34 to: Awning          SET          `0004` changed (for Answer was )` 
- ...
- 259.862 from: Panel           what       34 to: Awning          SET          `0004` changed (for stat was 00A32C2100604211)` 
- ...
- 260.371 from: ?unknown 11     stat                                           `C0FF00000000` changed (for stat was 00000000)
- 260.372 from: Panel           what       34 to: Awning          DONE         `0004`  data is same` 
- 260.373 from: ?unknown 18     what       14 to: Controller      DONE         `000400` changed (for what was 00000000)` 
- 260.375 from: Bus             what       31 to: ?unknown 05     stat         `002B` changed (for -- was 00B8012400000100)` 
- 260.376 from: Outside Lights  what       11 to: Bus             stat         `002B0D7BB9` changed (for what was 002B0D467F)` 
- ...
- 527.863 from: Panel           what       14 to: Water Pump      SET          `0004` changed (for stat was 00A32C2100604211)` 
- ...
-
+   0.495  S  BTController?   10-what                                                       00 
+   0.509 N   Bus             00---                                                         FF0005D30F509F00 
+   0.524     BTController?   10-what                                                       00 
+   0.559  S  Bus             00---                                                         00 
+...
+   3.793     ?unknown 02     11-Answer                                                     00A32C2100002011 
+   3.793     Panel           10-what          01110100-74  Water Pump      4-SET           0004 
+   3.796     ?unknown 15     10-what                                                       00A32C2100603111 
+...
+   4.171     ?unknown 1E     11-Answer                                                     81FF018B0000 
+   4.303     Panel           10-what          01110100-74  Water Pump      5-DONE?         0004 
+   4.304     ?unknown 1B     10-what          11010100-D4  Controller      5-DONE?         000400 
+...
+         
 
 ```

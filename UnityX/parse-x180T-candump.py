@@ -5,8 +5,8 @@ import signal
 import time
 import ruyaml as YAML
 
-devices = {  0x0: 'Bus', 0x10: 'Controller',  0x1: 'BTController?', 0x3: 'Panel', 0xb: 'Outside Lights', 0xd: 'Ceiling Lights',
-            0xF: 'Water Pump', 0x1C: 'Awning'}
+devices = {0x0: 'Bus', 0x10: 'Controller',  0x1: 'BTController?',  0x1E: 'Ceiling Lights', 0x0B: 'Outside Lights',  0x5: 'Water Pump',
+                0x6: 'Panel', 0x8: 'bus 2', 0x1c: 'Awning'}
 cmds = {0:"--", 1:"stat", 2:"what", 3: "Answer", 4: "SET", 5: "DONE?", 6:"6", 7:"7", 8:"8", 9:"9", 10:"10", 11:"11", 12:"12", 13:"13", 14:"14", 15:"15"}
 
 def signal_handler(signal, frame):
@@ -90,10 +90,10 @@ def readTheCan(timemark, arbitrationId, canData, argv):
     PDO = not (SDO or NMT)
     can_fromI = int(idBits[4:9], 2)
     can_from = format(can_fromI, "02X")
-    cantype = idBits[9:11]
+    cantype = idBits[9:12]
     if len(arbitrationId)>3:
-        can_toI = int(idBits[11:16], 2)
-        canwhatB = idBits[16:24]
+        can_toI = int(idBits[12:17], 2)
+        canwhatB = idBits[17:24]
         canwhatH = format(int(canwhatB, 2), "02X")
         
         cmd = format(int(idBits[24:28], 2), "01X")
@@ -131,7 +131,11 @@ def readTheCan(timemark, arbitrationId, canData, argv):
     if SDO:
         can_start = " S"
 
-    printstr1 = f"{timemark:8.3f} {can_start}  {canfrom: <15} {cantype}-{cmds[int(cantype,2)]: <8}"
+    if argv.asbits:
+        canbits = f"{idBits: <28} "
+    else:
+        canbits = ""
+    printstr1 = f"{can_start}  {canfrom: <15} {cantype}-{cmds[int(cantype,2)]: <8}"
     printstr2 = ""
     
     if can_toI >= 0:
@@ -139,7 +143,7 @@ def readTheCan(timemark, arbitrationId, canData, argv):
     if not argv.change:
         status = ""
     if printit: 
-        print (f"{printstr1: <45} {printstr2: <44} {canData} {status}")
+        print (f"{timemark:8.3f} {canbits}{printstr1: <37} {printstr2: <44} {canData} {status}")
 
     if can_fromI in MyCANDev.Devices:
         MyCANDev.Devices[can_fromI].ctype = cantype
@@ -158,16 +162,11 @@ def readTheCan(timemark, arbitrationId, canData, argv):
     MyCANDev.CanData[canData].addDevice(can_fromI, timemark)
     if not argv.dumptablefrom:
         MyCANDev.CanData[canData].addDevice(can_toI, timemark)
-    
-    
-header = f"{'  secs': <8} bit {'FROM': <15} {'type-': <15}  {'what':<11} {'TO': <13}  {'cmd-': <12}      Data"
-headln = f"{'-'     :-<8} --- {'-'   :-<15} {'-'    :-<15}  {'-':-<11} {'-':-<13}  {'-':-<12}      {'-':-<12}"
-
-    
+   
 def parse_console(argv):
     starttime = 0
-    print (header)
-    print (headln)
+    print (MyCANDev.header)
+    print (MyCANDev.headln)
     try:
         for linein in sys.stdin:
             line = linein.strip().split(' ')
@@ -188,8 +187,9 @@ def parse_file(argv):
     starttime = 0
     if argv.candumpFile and os.path.isfile(argv.candumpFile):
         with open(argv.candumpFile, "r") as file:
-            print (header)
-            print (headln)
+              
+            print (MyCANDev.header)
+            print (MyCANDev.headln)
             for linein in file:
                 line = linein.strip().split(' ')
                 if len(line) == 3:
@@ -343,6 +343,8 @@ def main():
                         help="Do not list the change information")
     parser.add_argument("-col1", "--nocolumns", dest="nocolumns", action='store_true', default = False,
                         help="Do not list the change information")
+    parser.add_argument("-b", "--bits", dest="asbits", action='store_true', default = False,
+                        help="print the arbitration id as a bit string")
     
     parser.add_argument("-o1", "--onlyone", dest="onlyssingles", action='store_true', default = False,
                         help="Show the items in the table which only appear once (implies table)")
@@ -366,12 +368,19 @@ def main():
     if args.negfilter:
         for a in range(len(args.negfilter)):
             args.negfilter[a] = args.negfilter[a].upper().zfill(2)
-    
+    if args.asbits:
+        canbits = f" {' ': <28}"
+    else:
+        canbits = ""
+    MyCANDev.header = f"{'  secs': <8} {canbits}bit {'FROM': <15} {'type-': <15}  {'what':<11} {'TO': <13}  {'cmd-': <12}      Data"
+    MyCANDev.headln = f"{'-'     :-<8} {canbits}--- {'-'   :-<15} {'-'    :-<15}  {'-':-<11} {'-':-<13}  {'-':-<12}      {'-':-<12}"
+
     if args.canpipe:
         #signal.signal(signal.SIGINT, signal_handler)
         #signal.signal(signal.SIGTERM, signal_handler)
         parse_console(args)
     else:
+        parser.parse_intermixed_args()
         parse_file(args)    
     
     wrapup(args)
