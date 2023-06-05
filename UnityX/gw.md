@@ -1,18 +1,10 @@
 # GW
 ## Unlock access to GW
-In boot
+In boot - you can mount it on any computer.
 	- Added zero byte file `ssh`
 
-Mount ext4 part
-- Optional Change /etc/network/
+Mount the MicroSD in Linux and acess 2nd partition (ext4)
 
-~~~bash
-mv interfaces interfaces.save
-cat > interfaces
-    # interfaces(5) file used by ifup(8) and ifdown(8)
-	  # Include files from /etc/network/interfaces.d:
-source /etc/network/interfaces.d/*
-~~~
 
 - Add to `/etc/passwd`
 		`dj:x:1001:1000:,,,:/home/pi:/bin/bash`
@@ -27,9 +19,19 @@ dj:$6$xyzsalt$JJzQkBsqgkiVtmiZ1z9Utu2z/jMXp9t1VFzWgNOhekoJ4.UUoTA0u4bBpuqx5XUdKZ
 		`sudo nano 010_pi-nopasswd`
 Edit file and added word to `dj` beside `pi`
 	
+
+### Optional
+Change /etc/network/
+~~~bash
+mv interfaces interfaces.save
+cat > interfaces
+    # interfaces(5) file used by ifup(8) and ifdown(8)
+	  # Include files from /etc/network/interfaces.d:
+source /etc/network/interfaces.d/*
+~~~
+
 - Edit rc.local to reduce the cycle of reboots when mount does not work correctly.
 		Change sleep `120` to `1200`
-
 
 
 ## commands in GW
