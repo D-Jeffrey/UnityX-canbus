@@ -80,19 +80,19 @@ Grand Design 2022 Imagine 2670MK running a Lippert Unity X180T
  ID  | Device | Statusing
  --- | --- | ---
  0x10 | Controller | Y
- 0x1 | ? | Y
+ 0x1 | BTController | Y
  0x2 | ? | N
  0x3 | ? | N
  0x4 | ? | N
- 0x5 | ? | N
- 0x6 | ? | N
+ 0x5 | Water Pump | N
+ 0x6 | Panel | N
  0x7 | ? | N 
  0x8 | ? | Y
  0x9 | ? | N
  0xA | ? | N
  0xB | Outside lights | Y
  0xC | ? | Y
- 0xD | Ceiling Lights | Y
+ 0xD | ? | Y
  0xE | ? | Y
  0xF | Water Pump | Y
  0x11 | ? | N
@@ -100,9 +100,19 @@ Grand Design 2022 Imagine 2670MK running a Lippert Unity X180T
  0x18 | ? | N
  0x1C | Awning | Y
  0X1D | ? | N
- 0x1E | ? | Y
+ 0x1E | Ceiling Lights | Y
  0x1F | ? | N
  
+ #### Possible commands
+
+  id | command meaning
+  ---|---
+  0  | --
+  1 | status
+  2 | what
+  3 | Answer
+  4 | SET
+  5 | Done?
 
 References: https://en.wikipedia.org/wiki/CAN_bus
 

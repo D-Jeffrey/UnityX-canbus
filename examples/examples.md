@@ -1,4 +1,4 @@
-If you wanted to try this out you can use `candump -i can0 | python3 parse-x180T-candump.py -pipe` to see what kind of basic device interaction you get.
+If you wanted to try this out you can use `candump -L can0 | python3 parse-x180T-candump.py -pipe` to see what kind of basic device interaction you get.
 Then you can filter to specific ids or exclude the noisy ones.  Then you can try out the different device interactions to see which one triggers which id.
 
 You can also confirm or suggest different names for the devices in the Discussion.  You can also help me understand the type/cmd that is issues and what it means.
@@ -41,3 +41,6 @@ Same but with zero data
 
 Same but without the summaries
 [`python3 ..\UnityX\parse-x180T-candump.py -i candump-2023-04-23_210058.log -f  b d f 1c -nc`](23_210058-f_b_d_f_1c-nc.txt)
+
+Direct dump from candump
+`candump -L can0 | python3 ..\UnityX\parse-x180T-candump.py -pipe`
