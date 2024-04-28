@@ -9,8 +9,11 @@ UnityX/entity/
 UnityX/entity_factory_support.py
 UnityX/mqtt.py
 UnityX/plugin_support.py
-
-
+.vs/
+UnityX/Code/
+UnityX/.vs/
+UnityX/.vscode/
+UnityX/__pycache__/
 
 
 *.pyc
