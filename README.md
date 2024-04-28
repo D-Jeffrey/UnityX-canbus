@@ -23,4 +23,5 @@ What did we look at:
 - [VSCP](https://en.wikipedia.org/wiki/Very_Simple_Control_Protocol) It does not have the From TO IDs.
 - [SAE J1939](https://en.wikipedia.org/wiki/SAE_J1939) in-vehicle network for buses and trucks - the right speed, much to complex for what I would expect here, moving on
 
+X180T has the markings that it is EP-WROOM-32E
 
