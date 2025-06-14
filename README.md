@@ -12,9 +12,9 @@ There are some people out there who are connecting the RV or Trailer over Ethern
 
 ![Lippert X180T](img/20230325_X180T.jpg)
 
-- [Is it RV-C](IsItRV-C.md)
-- [It is CanOpen?](itisCanOpen-custom.md)
-    - Suprise it is something else ... a total custom nightmare
+- [Is it RV-C](IsItRV-C.md) - *Nope*
+- [It is CanOpen?](itisCanOpen-custom.md) - *Nope*
+    - Suprise it is something else ... a total custom nightmare - - *Yup*
 - use the code to decode [parse-x180T-candump.py](UnityX/parse-x180T-candump.py)
 - [Examples](examples/examples.md)
 
@@ -25,3 +25,6 @@ What did we look at:
 
 X180T has the markings that it is EP-WROOM-32E
 
+It turns out that it is IDS-CANBUS (otherwise known as whatever we want the defination to be, I will code it as I go, no point following standards)
+
+  
