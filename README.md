@@ -1,6 +1,8 @@
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/y/D-Jeffrey/UnityX-canbus)
 ![Github Created At](https://img.shields.io/github/created-at/D-Jeffrey/UnityX-canbus)
 
+_**See at update at the bottom of README**_
+
 # lippert-canbus
 Figure out the way in which Grand Design Trailers work using CAN bus (which using Lippert controllers)
 
@@ -27,4 +29,5 @@ X180T has the markings that it is EP-WROOM-32E
 
 It turns out that it is IDS-CANBUS (otherwise known as whatever we want the defination to be, I will code it as I go, no point following standards)
 
-  
+# __A BIG update (for 2026)__
+This project [phurth/ha-onecontrol](https://github.com/phurth/ha-onecontrol/) fills the gap and builds a Bluetooth bridge between HomeAssistant and OneControl, so no special CANbus harness is required.
